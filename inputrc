@@ -1,0 +1,9 @@
+# Left/Right movement
+"\e[1;5C": forward-word
+"\e[1;5D": backward-word
+
+# Shift-tab to cycle through autocompletes
+"\e[Z": menu-complete
+
+# Case insensitive auto-complete
+set completion-ignore-case On
