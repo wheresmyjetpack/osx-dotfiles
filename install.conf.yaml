@@ -2,6 +2,7 @@
 
 - link:
     ~/.profile: profile
+    ~/.alias: alias
     ~/.bash_profile: bash_profile
     ~/.bashrc: bashrc
     ~/.bash_logout: bash_logout
