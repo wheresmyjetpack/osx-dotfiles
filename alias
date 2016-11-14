@@ -60,3 +60,10 @@ alias rmdoslines="sed -i 's|\r|\n\n|g'"
 # Also, clear Apple’s System Logs to improve shell startup speed.
 # Finally, clear download history from quarantine. https://mths.be/bum
 alias emptytrash="sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash; sudo rm -rfv /private/var/log/asl/*.asl; sqlite3 ~/Library/Preferences/com.apple.LaunchServices.QuarantineEventsV* 'delete from LSQuarantineEvent'"
+
+alias rdsdump=rds_psql_dump_and_move
+rds_psql_dump_and_move() {
+  user=$(whomai)
+  psql -d searchinfluence -c "DROP SCHEMA $1 CASCADE;"
+  pg_dump -h rds -U $user -n $1 searchinfluence -C | pv | psql searchinfluence
+}
