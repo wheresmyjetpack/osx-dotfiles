@@ -39,3 +39,8 @@ source ~/.git-prompt.sh
 # chruby auto-load ruby version
 source /usr/local/share/chruby/chruby.sh
 source /usr/local/share/chruby/auto.sh
+
+# load brew's bash-completion
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
+  source $(brew --prefix)/etc/bash_completion
+fi
