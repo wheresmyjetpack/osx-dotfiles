@@ -1,12 +1,24 @@
-# Functions
+#!/bin/bash
+
+### Shell Functions ###
+
+# grep the value of an img tag's src attribute
 function imggrep() {
   grep -Po "(?<=src\=([\"'])).*?\.(?:png|jpg|gif).*?(?=\1)"  # Get img sources from HTML
 }
 
+# last 5 most recently modified files in cwd
 function lastmod() {
   find . -not -path '*/\.*' -type f -printf '%T@ %TY-%Tm-%Td %TH:%TM:%.2TS %p\n' | sort -nr | head -n 5 | cut -f2- -d" "
 }
 
+# print process info of any zombies
 function zombiehunt() {
   ps alx | awk 'NR==1 || $10~/[zZ]/'
+}
+
+# dump SI db schemas / namespaces to localhost
+function rdsdump() {
+  psql -d searchinfluence -c "DROP SCHEMA $1 CASCADE;";
+  pg_dump -h rds -U $(whoami) -n $1 -d searchinfluence -C | pv | psql searchinfluence
 }
