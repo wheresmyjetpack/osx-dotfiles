@@ -63,4 +63,11 @@ alias rmdoslines="sed -i 's|\r|\n\n|g'"
 # Finally, clear download history from quarantine. https://mths.be/bum
 alias emptytrash="sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash; sudo rm -rfv /private/var/log/asl/*.asl; sqlite3 ~/Library/Preferences/com.apple.LaunchServices.QuarantineEventsV* 'delete from LSQuarantineEvent'"
 
+# List dotfiles in cwd in alphabetical order
+alias dotfind="find . -maxdepth 1 -mindepth 1 -iname '\.*' | sort -u"
+
+# Display each PATH entry on a seperate line
+alias pathsort="echo $PATH | tr ':' '\n'"
+
+# SI
 alias rdsconn="psql -h rds -U $(whoami) -d searchinfluence"
