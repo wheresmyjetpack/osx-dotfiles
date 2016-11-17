@@ -14,7 +14,10 @@ fi
 # Prompt
 export PS1="\[\e[34m\]\t \[\e[m\]\u\[\e[32m\]\w\[\e[m\]\[\e[33m\]\$(__git_ps1)\[\e[m\] "
 
-# Set architecture flags
+# PATH
+[[ -d $HOME/bin ]] && export PATH="$PATH:$HOME/bin"
+
+# Misc
 export ARCHFLAGS="-arch x86_64"
 export EDITOR=/usr/bin/vi
 export VISUAL=/usr/bin/vi
