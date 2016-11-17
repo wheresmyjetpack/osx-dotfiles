@@ -43,6 +43,7 @@ alias irb="irb --simple-prompt"
 alias rs="rails server"
 alias rc="rails console"
 alias rg="rails generate"
+alias rgm="rails generate migration"
 
 # Reload shell
 alias reload="exec $SHELL -l"

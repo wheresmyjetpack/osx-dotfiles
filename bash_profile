@@ -19,8 +19,8 @@ export PS1="\[\e[34m\]\t \[\e[m\]\u\[\e[32m\]\w\[\e[m\]\[\e[33m\]\$(__git_ps1)\[
 
 # Misc
 export ARCHFLAGS="-arch x86_64"
-export EDITOR=/usr/bin/vi
-export VISUAL=/usr/bin/vi
+export EDITOR=/usr/bin/vim
+export VISUAL=/usr/bin/vim
 export CLICOLOR=1
 
 # Pip
@@ -44,6 +44,4 @@ source /usr/local/share/chruby/chruby.sh
 source /usr/local/share/chruby/auto.sh
 
 # load brew's bash-completion
-if [ -f $(brew --prefix)/etc/bash_completion ]; then
-  source $(brew --prefix)/etc/bash_completion
-fi
+[[ -f $(brew --prefix)/etc/bash_completion ]] && source $(brew --prefix)/etc/bash_completion

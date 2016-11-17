@@ -20,11 +20,6 @@ shopt -s checkwinsize
 # match all files and zero or more directories and subdirectories.
 shopt -s globstar
 
-# programmable bash completion
-if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
-  . /etc/bash_completion
-fi
-
 # Load aliases
 [[ -s "$HOME/.alias" ]] && source "$HOME/.alias"
 
