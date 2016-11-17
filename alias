@@ -1,8 +1,6 @@
-# Allow aliases to be sudoed
-# alias sudo='sudo '
-
 # ls aliases
 #alias ls='ls -l --color=auto'
+alias ls="ls -l"
 alias ll="ls -laF"      
 alias ld="ls -ld */"   
 alias la="ls -la"
@@ -27,7 +25,7 @@ alias cleanupds="find . -type f -name '*.DS_Store' -ls -delete"
 alias chromekill="ps ux | grep '[C]hrome Helper --type=renderer' | grep -v extension-process | tr -s ' ' | cut -d ' ' -f2 | xargs kill"
 
 # Git
-alias dt="diff-tree --no-commit-id --name-only"
+alias gdt="git diff-tree --no-commit-id --name-only"
 alias gstat="git status"
 alias gd="git diff"
 alias gdc="git diff --cached"
@@ -38,6 +36,7 @@ alias grh="git reset HEAD"
 alias gfu="git fetch upstream"
 alias gmu="git merge upstream/master"
 alias gorigin="git log --diff-filter=A --follow --format=%aD -1 --"
+alias git-changes="git status -s | sed 's/^...//'"
 
 # Ruby / Rails
 alias irb="irb --simple-prompt"
@@ -52,6 +51,9 @@ alias reload="exec $SHELL -l"
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
 alias localip="ipconfig getifaddr en0"
 alias ips="ifconfig -a | grep -o 'inet6\? \(addr:\)\?\s\?\(\(\([0-9]\+\.\)\{3\}[0-9]\+\)\|[a-fA-F0-9:]\+\)' | awk '{ sub(/inet6? (addr:)? ?/, \"\"); print }'"
+
+# alert for long running jobs. usage: long-running-command; alert
+alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
 # Replace DOS ^M characters w/ two UNIX newlines
 alias rmdoslines="sed -i 's|\r|\n\n|g'"
