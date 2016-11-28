@@ -22,3 +22,23 @@ function rdsdump() {
   psql -d searchinfluence -c "DROP SCHEMA $1 CASCADE;";
   pg_dump -h rds -U $(whoami) -n $1 -d searchinfluence -C | pv | psql searchinfluence
 }
+
+# run rubocop on files modified inbetween HEAD and commit-SHA
+function rubocopdiff() {
+  sha="$1"
+  if [[ -z $sha ]] ; then
+    echo "[-] rubocopdiff needs a commit hash as an argument"
+  else
+    git diff --name-only HEAD "$sha" | grep '\.rb' | xargs rubocop -f s -a
+  fi
+}
+
+# cd "hook" to source .env files
+function cd() {
+  builtin cd $1
+  project_dir=$(pwd);
+  if [[ -f $project_dir/.env ]]; then
+    . $project_dir/.env;
+    echo "[!] Sourcing the .env file for $project_dir";
+  fi
+}

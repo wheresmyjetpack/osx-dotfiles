@@ -78,6 +78,8 @@ set noswapfile
 set scrolloff=10
 set pastetoggle=<F2>
 
+au BufWritePre * :%s/\(\S\)\s\+$/\1/e
+
 au Filetype * set ts=2 sts=2 sw=2
 au FileType python set ts=4 sts=4 sw=4 nosmartindent
 au FileType ruby set ts=2 sts=2 sw=2 nosmartindent
