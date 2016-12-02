@@ -17,10 +17,18 @@ function zombiehunt() {
   ps alx | awk 'NR==1 || $10~/[zZ]/'
 }
 
+# print datetime in a format suitable for naming files
+function file_date() {
+  date +"%G-%m-%d-%H-%M"
+}
+
 # dump SI db schemas / namespaces to localhost
 function rdsdump() {
+  date_time=$(file_date)
+  dump_file="$HOME"/rds-dumps/"$1"-"$date_time".dump
   psql -d searchinfluence -c "DROP SCHEMA $1 CASCADE;";
-  pg_dump -h rds -U $(whoami) -n $1 -d searchinfluence -C | pv | psql searchinfluence
+  pg_dump -h rds -U $(whoami) -n $1 -d searchinfluence -C -f "$dump_file" -F d
+  pg_restore -d searchinfluence "$dump_file" | pv
 }
 
 # run rubocop on files modified inbetween HEAD and commit-SHA

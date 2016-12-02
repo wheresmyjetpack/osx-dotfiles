@@ -1,5 +1,5 @@
 # Load the default .profile
-[[ -s "$HOME/.profile" ]] && source "$HOME/.profile" 
+[[ -s "$HOME/.profile" ]] && source "$HOME/.profile"
 
 # Load .bashrc if it exists
 [[ -s "$HOME/.bashrc" ]] && source "$HOME/.bashrc"
@@ -35,6 +35,7 @@ source /usr/local/bin/virtualenvwrapper.sh
 # misc
 export PROMPT_DIRTRIM=2
 export INPUTRC=~/.inputrc
+export PATH="/usr/local/sbin:$PATH"
 
 # Put git status in prompt
 source ~/.git-prompt.sh
