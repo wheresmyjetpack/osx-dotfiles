@@ -50,3 +50,8 @@ function cd() {
     echo "[!] Sourcing the .env file for $project_dir";
   fi
 }
+
+# get changes in a single commit
+function git_changes() {
+  git diff "$1"^ "$1"
+}

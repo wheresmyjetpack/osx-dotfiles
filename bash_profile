@@ -28,9 +28,9 @@ export PIP_REQUIRE_VIRTUALENV=true
 #export PIP_REQUIRE_VIRTUALENV=false
 
 # Python Virtualenvwrapper
-export WORKON_HOME=$HOME/.virtualenvs
-export PROJECT_HOME=$HOME/Devel
-source /usr/local/bin/virtualenvwrapper.sh
+#export WORKON_HOME=$HOME/.virtualenvs
+#export PROJECT_HOME=$HOME/Devel
+#source /usr/local/bin/virtualenvwrapper.sh
 
 # misc
 export PROMPT_DIRTRIM=2
