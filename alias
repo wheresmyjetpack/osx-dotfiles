@@ -46,6 +46,9 @@ alias rc="rails console"
 alias rg="rails generate"
 alias rgm="rails generate migration"
 
+# tmux
+alias tmux="TERM=screen-256color-bce tmux"
+
 # Reload shell
 alias reload="exec $SHELL -l"
 
@@ -73,3 +76,4 @@ alias pathsort="echo $PATH | tr ':' '\n'"
 
 # SI
 alias rdsconn="psql -h rds -U $(whoami) -d searchinfluence"
+alias staging-rdsconn="psql -h rds-staging -U $(whoami) -d searchinfluence"

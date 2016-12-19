@@ -10,6 +10,5 @@
     ~/.vimrc: vimrc
     ~/.zshrc: zshrc
     ~/.inputrc: inputrc
-    ~/.bash_aliases: bash_aliases
     ~/.functions: functions
-    ~/.vim: vim
+    ~/.tmux.conf: tmux.conf

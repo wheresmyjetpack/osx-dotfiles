@@ -5,11 +5,13 @@
 [[ -s "$HOME/.bashrc" ]] && source "$HOME/.bashrc"
 
 # full colors
-if [ -e /usr/share/terminfo/x/xterm-256color ]; then
-  export TERM='xterm-256color'
-else
-  export TERM='xterm-color'
-fi
+#if [ -e /usr/share/terminfo/x/xterm-256color ]; then
+  #export TERM='xterm-256color'
+#else
+  #export TERM='xterm-color'
+#fi
+
+export TERM='xterm-256color'
 
 # Prompt
 export PS1="\[\e[34m\]\t \[\e[m\]\u\[\e[32m\]\w\[\e[m\]\[\e[33m\]\$(__git_ps1)\[\e[m\] "
@@ -24,7 +26,7 @@ export VISUAL=/usr/bin/vim
 export CLICOLOR=1
 
 # Pip
-export PIP_REQUIRE_VIRTUALENV=true
+#export PIP_REQUIRE_VIRTUALENV=true
 #export PIP_REQUIRE_VIRTUALENV=false
 
 # Python Virtualenvwrapper
@@ -43,6 +45,9 @@ source ~/.git-prompt.sh
 # chruby auto-load ruby version
 source /usr/local/share/chruby/chruby.sh
 source /usr/local/share/chruby/auto.sh
+
+# load git auto-completion
+[[ -f $HOME/.git-completion.bash ]] && . $HOME/.git-completion.bash
 
 # load brew's bash-completion
 [[ -f $(brew --prefix)/etc/bash_completion ]] && source $(brew --prefix)/etc/bash_completion
