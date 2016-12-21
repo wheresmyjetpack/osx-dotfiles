@@ -27,7 +27,7 @@ export CLICOLOR=1
 
 # Pip
 #export PIP_REQUIRE_VIRTUALENV=true
-#export PIP_REQUIRE_VIRTUALENV=false
+export PIP_REQUIRE_VIRTUALENV=false
 
 # Python Virtualenvwrapper
 #export WORKON_HOME=$HOME/.virtualenvs

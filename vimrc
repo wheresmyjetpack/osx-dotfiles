@@ -15,7 +15,12 @@ Plugin 'ervandew/supertab'
 
 " Airline
 Plugin 'bling/vim-airline'
-let g:airline#extensions#tabline#enabled = 1
+
+" Airline Themes
+Plugin 'vim-airline/vim-airline-themes'
+
+" Tmuxline
+Plugin 'edkolev/tmuxline.vim'
 
 " Bufferline
 Plugin 'bling/vim-bufferline'
@@ -100,3 +105,22 @@ let python_highlight_all = 1
 :command Wq wq
 :command W w
 :command Q q
+
+:python import sys; sys.path.append("/Library/Python/2.7/site-packages")
+
+" Airline configuration
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tmuxline#enabled = 1
+let g:airline_theme='base16_colors'
+
+" Tmuxline configuration
+let g:tmuxline_powerline_separators = 0
+let g:tmuxline_separators = {
+    \ 'left' : '',
+    \ 'left_alt': '>',
+    \ 'right' : '',
+    \ 'right_alt' : '<',
+    \ 'space' : ' '}
+
+" Bufferline configuration
+let g:bufferline_echo = 0
