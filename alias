@@ -72,7 +72,7 @@ alias emptytrash="sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash; sudo 
 alias dotfind="find . -maxdepth 1 -mindepth 1 -iname '\.*' | sort -u"
 
 # Display each PATH entry on a seperate line
-alias pathsort="echo $PATH | tr ':' '\n'"
+alias pathsort="echo $PATH | tr ':' '\n' | sort"
 
 # SI
 alias rdsconn="psql -h rds -U $(whoami) -d searchinfluence"

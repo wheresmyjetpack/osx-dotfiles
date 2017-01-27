@@ -101,17 +101,19 @@ map _ :m .-2<enter>
 
 let python_highlight_all = 1
 
-:command WQ wq
-:command Wq wq
-:command W w
-:command Q q
+:command! WQ wq
+:command! Wq wq
+:command! W w
+:command! Q q
+:command! BD bd
+:command! Bd bd
 
 :python import sys; sys.path.append("/Library/Python/2.7/site-packages")
 
 " Airline configuration
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tmuxline#enabled = 1
-let g:airline_theme='base16_colors'
+let g:airline_theme='base16_harmonic16'
 
 " Tmuxline configuration
 let g:tmuxline_powerline_separators = 0

@@ -4,17 +4,10 @@
 # Load .bashrc if it exists
 [[ -s "$HOME/.bashrc" ]] && source "$HOME/.bashrc"
 
-# full colors
-#if [ -e /usr/share/terminfo/x/xterm-256color ]; then
-  #export TERM='xterm-256color'
-#else
-  #export TERM='xterm-color'
-#fi
-
-export TERM='xterm-256color'
+[[ $TMUX = "" ]] && export TERM="xterm-256color"
 
 # Prompt
-export PS1="\[\e[34m\]\t \[\e[m\]\u\[\e[32m\]\w\[\e[m\]\[\e[33m\]\$(__git_ps1)\[\e[m\] "
+export PS1="\[\e[38;5;92m\]\t \[\e[m\]\u \[\e[36m\]\w\[\e[m\]\[\e[38;5;202m\]\$(__git_ps1)\[\e[m\] "
 
 # PATH
 [[ -d $HOME/bin ]] && export PATH="$PATH:$HOME/bin"
