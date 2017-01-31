@@ -55,3 +55,19 @@ function cd() {
 function git_changes() {
   git diff "$1"^ "$1"
 }
+
+# heroku
+function heroku_restore() {
+  heroku pg:backups:capture
+  heroku pg:backups:download
+  pg_restore --verbose --clean --no-acl --no-owner -h localhost -d $1 latest.dump
+  rm -rf latest.dump
+}
+
+function heroku_psql() {
+  if [[ $1 -eq '' ]] ; then
+    echo 'Please specify the remote'
+  else
+    heroku pg:psql -r $1
+  fi
+}
