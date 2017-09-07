@@ -31,6 +31,10 @@ export PIP_REQUIRE_VIRTUALENV=false
 export PROMPT_DIRTRIM=2
 export INPUTRC=~/.inputrc
 export PATH="/usr/local/sbin:$PATH"
+export GIT_HOOKS_SOURCE="$HOME/bin"
+export PAGER="less -SF" psql
+export PROJECTS_DIR="$HOME/devel/projects"
+export PRE_COMMIT_IGNORE_SPEC='0'
 
 # Put git status in prompt
 source ~/.git-prompt.sh
